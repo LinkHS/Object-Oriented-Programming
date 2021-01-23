@@ -51,11 +51,15 @@ size_t Histogram::min() const
 
 size_t Histogram::median() const
 { // (the average of) the middle value(s)
-
 }
 
 double Histogram::mean() const
 { // arithmetic average of the values
+}
+
+double Histogram::variance() const
+{
+    cout << "variance" << endl;
 }
 
 void Histogram::operator+=(const Histogram &rhs)
@@ -72,3 +76,15 @@ size_t Histogram::operator[](size_t val) const
     assert((val >= 0) && (val <= MAX));
     return counts[val];
 }
+
+ostream &operator<<(ostream &out, const Histogram &h)
+{
+    for (size_t i = 0; i <= Histogram::MAX; i++)
+    {
+        if (h[i] == 0)
+            continue;
+        out << i << ": " << std::string(h[i], '*') << " " << endl;
+    }
+    return out;
+}
+

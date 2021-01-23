@@ -26,34 +26,31 @@ void test_operator_square_bracket(void)
   cout << endl
        << "testing operator square bracket" << endl;
   Histogram histogram("./data.txt");
+
   assert(histogram[0] == 0);
   assert(histogram[9] == 2);
 }
 
-void test_sort_vector(void)
+void test_operator_ostream(void)
 {
-  size_t counts[10] = {3, 2, 9, 10, 3, 1, 2, 9, 12, 8};
+  Histogram histogram("./data.txt");
+  cout << histogram;
+}
 
-  vector<vector<size_t>> v_counts; // vector_counts
-  for (size_t i = 0; i < 10; i++)
-  {
-    vector<size_t> v = {counts[i], i};
-    v_counts.push_back(v);
-  }
-
-  sort(v_counts.begin(), v_counts.end());
-
-  for (int i = 0; i < 10; i++)
-    cout << v_counts[i][0] << " ";
-  cout << endl;
-  for (int i = 0; i < 10; i++)
-    cout << v_counts[i][1] << " ";
+void test_variance(void)
+{
+  Histogram histogram("./data.txt");
+  histogram.variance();
 }
 
 int main()
 {
-  test_operator_add();
-  test_operator_square_bracket();
+  //test_operator_add();
+  //test_operator_square_bracket();
+
+  //test_operator_ostream();
+
+  //test_variance();
 
   return 0;
 }
