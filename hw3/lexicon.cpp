@@ -41,6 +41,10 @@ bool Lexicon::contains(string word) const
   return false;
 }
 
+Lexicon Lexicon::operator | (const Lexicon& rhs) const
+{
+}
+
 // Inserts contents of lex in out in order, separated by spaces
 ostream &operator<<(ostream &out, const Lexicon &lex)
 {
