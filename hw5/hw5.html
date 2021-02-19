@@ -1,0 +1,590 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Homework 5 &#8212; Object-Oriented Programming</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/mystnb.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="../readme.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Object-Oriented Programming</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  
+  <ul class="nav sidenav_l1">
+  <li class="active">
+    <a href="">Homework 5</a>
+  </li>
+</ul>
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse" data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu" aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation" title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+            <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i class="fas fa-download"></i></button>
+
+            
+            <div class="dropdown-buttons">
+                <!-- ipynb file if we had a myst markdown file -->
+                
+                <!-- Download raw file -->
+                <a class="dropdown-buttons" href="../_sources/hw5/hw5.ipynb"><button type="button" class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip" data-placement="left">.ipynb</button></a>
+                <!-- Download PDF via print -->
+                <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF" onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+            </div>
+            
+        </div>
+
+        <!-- Source interaction buttons -->
+        
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+        
+    </div>
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#template" class="nav-link">template</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#swap" class="nav-link">swap()</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#template-swap" class="nav-link">template_swap()</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id1" class="nav-link">template陷阱</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#class-template" class="nav-link">class template</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#id2" class="nav-link">其他</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id3" class="nav-link">专用方法</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#id4" class="nav-link">多个template</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+
+
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="homework-5">
+<h1>Homework 5<a class="headerlink" href="#homework-5" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://www.yuque.com/docs/share/117b56fc-8794-4221-a104-ddb9cbb9dd7b#%E3%80%8AHomework5%E3%80%8B">语雀文档</a></p>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/LinkHS/Object-Oriented-Programming/HEAD?urlpath=lab/tree/hw5"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;iostream&gt;</span>
+<span class="c1">#include &lt;vector&gt;</span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="template">
+<h2>template<a class="headerlink" href="#template" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="swap">
+<h3><code class="docutils literal notranslate"><span class="pre">swap()</span></code><a class="headerlink" href="#swap" title="Permalink to this headline">¶</a></h3>
+<p>先看一个简单的交换两个<code class="docutils literal notranslate"><span class="pre">int</span></code>型变量的函数：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">swap</span><span class="p">(</span><span class="nb">int</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="nb">int</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nb">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">a</span> <span class="o">=</span>  <span class="n">b</span><span class="p">;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">ia</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">ib</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="n">swap</span><span class="p">(</span><span class="n">ia</span><span class="p">,</span> <span class="n">ib</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;ia: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ia</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;, ib: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ib</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>ia: 2, ib: 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>可是上面的<code class="docutils literal notranslate"><span class="pre">swap()</span></code>只能接受<code class="docutils literal notranslate"><span class="pre">int</span></code>型参数，对于其他类型的参数还需要定义新的<code class="docutils literal notranslate"><span class="pre">swap()</span></code>，如下面的<code class="docutils literal notranslate"><span class="pre">swap_float</span></code>：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span> <span class="n">fa</span> <span class="o">=</span> <span class="mf">1.1</span><span class="p">;</span>
+<span class="nb">float</span> <span class="n">fb</span> <span class="o">=</span> <span class="mf">1.2</span><span class="p">;</span>
+
+<span class="n">void</span> <span class="n">swap_float</span><span class="p">(</span><span class="nb">float</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="nb">float</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="template-swap">
+<h3><code class="docutils literal notranslate"><span class="pre">template_swap()</span></code><a class="headerlink" href="#template-swap" title="Permalink to this headline">¶</a></h3>
+<p>为了每一种类型都实现一个对应的<code class="docutils literal notranslate"><span class="pre">swap()</span></code>非常麻烦，如果以后用户自定义了新类型还得修改原代码，<code class="docutils literal notranslate"><span class="pre">template</span></code>可以解决这个问题：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">template</span><span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span> 
+<span class="n">void</span> <span class="n">t_swap</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span> <span class="n">t1</span><span class="p">,</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">t2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">T</span> <span class="n">tmpT</span><span class="p">;</span>
+    <span class="n">tmpT</span> <span class="o">=</span> <span class="n">t1</span><span class="p">;</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">t2</span><span class="p">;</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">tmpT</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>使用<code class="docutils literal notranslate"><span class="pre">template</span></code>和普通函数的区别在于，函数的参数没有被指定，而是用了一个<code class="docutils literal notranslate"><span class="pre">T</span></code>代替，在调用函数时编译器会判断传入参数的类型：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t_swap</span><span class="p">(</span><span class="n">ia</span><span class="p">,</span> <span class="n">ib</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;ia: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ia</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;, ib: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ib</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>ia: 1, ib: 2
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">t_swap</span></code>成功交换了<code class="docutils literal notranslate"><span class="pre">int</span></code>型变量，再试一下<code class="docutils literal notranslate"><span class="pre">float</span></code>类型：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t_swap</span><span class="o">&lt;</span><span class="nb">float</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">fa</span><span class="p">,</span> <span class="n">fb</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;fa: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">fa</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;, fb: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">fb</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>fa: 1.2, fb: 1.1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>template陷阱<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">template</span></code>很强大，但是必然也有需要注意的地方，这里我们用<code class="docutils literal notranslate"><span class="pre">template</span></code>实现一个可以计算任意类型的数组的平均值：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">T</span> <span class="n">avg</span><span class="p">(</span><span class="n">const</span> <span class="n">T</span> <span class="o">*</span><span class="n">beg</span><span class="p">,</span> <span class="n">const</span> <span class="n">T</span> <span class="o">*</span><span class="n">end</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">T</span> <span class="nb">sum</span><span class="p">{};</span>
+    <span class="nb">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">beg</span> <span class="o">!=</span> <span class="n">end</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nb">sum</span> <span class="o">+=</span> <span class="o">*</span><span class="n">beg</span><span class="p">;</span>
+        <span class="o">++</span><span class="n">beg</span><span class="p">;</span>
+        <span class="o">++</span><span class="n">cnt</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nb">sum</span> <span class="o">/</span> <span class="n">cnt</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>**【重点】**思考：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">sum{}</span></code>中的<code class="docutils literal notranslate"><span class="pre">{}</span></code>作用？</p></li>
+<li><p>能否用<code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">sum</span> <span class="pre">=</span> <span class="pre">0</span></code>代替？</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span> <span class="n">a</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;avg: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">avg</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>avg: 3
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">char</span></code>型字符也可以被计算（ascii码）：</p>
+<blockquote>
+<div><p>提示：<code class="docutils literal notranslate"><span class="pre">%x</span></code>输出16进制</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">char</span> <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;1&#39;</span> <span class="o">+</span> <span class="s1">&#39;2&#39;</span> <span class="o">+</span> <span class="s1">&#39;3&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">, </span><span class="si">%d</span><span class="s2">, </span><span class="si">%d</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%x</span><span class="s2">, </span><span class="si">%x</span><span class="s2">, </span><span class="si">%x</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">, </span><span class="si">%c</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>49, 50, 51
+31, 32, 33
+50, 2
+</pre></div>
+</div>
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p>如果传入<code class="docutils literal notranslate"><span class="pre">avg()</span></code>是<code class="docutils literal notranslate"><span class="pre">char</span></code>数组会发生什么？</p>
+<blockquote>
+<div><p>提示：<code class="docutils literal notranslate"><span class="pre">avg()</span></code>中的<code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">sum</span></code>会变成<code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">sum</span></code></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">const</span> <span class="n">char</span> <span class="o">*</span><span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;12345&quot;</span><span class="p">;</span>
+<span class="n">char</span> <span class="n">c</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">};</span>
+<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">, </span><span class="si">%x</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">avg</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span> <span class="n">avg</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">c</span><span class="o">+</span><span class="mi">3</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>-35, ffffffdd
+</pre></div>
+</div>
+</div>
+</div>
+<p>为什么结果变成了<code class="docutils literal notranslate"><span class="pre">-35</span></code>？</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%x</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="o">-</span><span class="mi">35</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%x</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">char</span><span class="p">)(</span><span class="mi">49</span><span class="o">+</span><span class="mi">50</span><span class="o">+</span><span class="mi">51</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>ffffffdd
+ffffffdd
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">char</span></code>型的范围为<code class="docutils literal notranslate"><span class="pre">[-128,</span> <span class="pre">127]</span></code>：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%x</span><span class="s2">, </span><span class="si">%x</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">char</span><span class="p">)</span><span class="mi">127</span><span class="p">,</span> <span class="p">(</span><span class="n">char</span><span class="p">)</span><span class="mi">128</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">, </span><span class="si">%d</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">char</span><span class="p">)</span><span class="mi">127</span><span class="p">,</span> <span class="p">(</span><span class="n">char</span><span class="p">)</span><span class="mi">128</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>7f, ffffff80
+127, -128
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="class-template">
+<h2>class template<a class="headerlink" href="#class-template" title="Permalink to this headline">¶</a></h2>
+<p>上一节讲了普通函数使用<code class="docutils literal notranslate"><span class="pre">template</span></code>申明参数或返回值类型，下面看下类成员如何使用<code class="docutils literal notranslate"><span class="pre">template</span></code>：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">mypair</span><span class="p">{</span>
+    <span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">public</span><span class="p">:</span>
+    <span class="n">mypair</span><span class="p">(</span><span class="n">T</span> <span class="n">first</span><span class="p">,</span> <span class="n">T</span> <span class="n">second</span><span class="p">){</span>
+        <span class="n">a</span><span class="o">=</span><span class="n">first</span><span class="p">;</span>
+        <span class="n">b</span><span class="o">=</span><span class="n">second</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">T</span> <span class="n">getmax</span> <span class="p">();</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>在类里使用<code class="docutils literal notranslate"><span class="pre">template</span></code>定义成员变量类型、成员函数参数类型、成员函数返回值类型很简单，下面看下在类外实现成员函数的用法：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>template &lt;class T&gt;
+T mypair&lt;T&gt;::getmax (){
+    T retval;
+    retval = a&gt;b ? a : b;
+    return retval;
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">mypair</span> <span class="n">myobject</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">75</span><span class="p">);</span>
+<span class="n">mypair</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="n">myobject</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">75</span><span class="p">);</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">myobject</span><span class="o">.</span><span class="n">getmax</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>100
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>其他<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>专用方法<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>之前我们定义了<code class="docutils literal notranslate"><span class="pre">t_swap</span></code>函数，可以接受<code class="docutils literal notranslate"><span class="pre">vector</span></code>类型的参数：</p>
+<blockquote>
+<div><p>这里因为jupyter编译器限制，如果实例化了<code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">t_swap(std::vector&lt;int&gt;&amp;</span> <span class="pre">t1,</span> <span class="pre">std::vector&lt;int&gt;&amp;</span> <span class="pre">t2)</span></code>，下面就不能再重新定义了*</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;</span> <span class="n">iv1</span><span class="p">,</span> <span class="n">iv2</span><span class="p">;</span>
+<span class="o">//</span> <span class="n">t_swap</span><span class="p">(</span><span class="n">iv1</span><span class="p">,</span> <span class="n">iv2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>假设<code class="docutils literal notranslate"><span class="pre">swap</span></code>函数要处理很多元素的<code class="docutils literal notranslate"><span class="pre">vector&lt;int&gt;</span></code>，执行<code class="docutils literal notranslate"><span class="pre">tmpT</span> <span class="pre">=</span> <span class="pre">t1</span></code>要拷贝<code class="docutils literal notranslate"><span class="pre">t1</span></code>的全部元素，占用大量内存，造成性能下降，可以通过<code class="docutils literal notranslate"><span class="pre">vector.swap</span></code>函数解决这个问题：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">template</span><span class="o">&lt;&gt;</span> 
+<span class="n">void</span> <span class="n">t_swap</span><span class="p">(</span><span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;&amp;</span> <span class="n">t1</span><span class="p">,</span> <span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="nb">int</span><span class="o">&gt;&amp;</span> <span class="n">t2</span><span class="p">){</span>
+    <span class="n">t1</span><span class="o">.</span><span class="n">swap</span><span class="p">(</span><span class="n">t2</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;using vector&lt;int&gt;.swap&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>测试一下<code class="docutils literal notranslate"><span class="pre">std::vector&lt;int&gt;</span></code>参数是否匹配成功：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t_swap</span><span class="p">(</span><span class="n">iv1</span><span class="p">,</span> <span class="n">iv2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>using vector&lt;int&gt;.swap
+</pre></div>
+</div>
+</div>
+</div>
+<p>测试一下<code class="docutils literal notranslate"><span class="pre">std::vector&lt;float&gt;</span></code>型参数是否匹配：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="nb">float</span><span class="o">&gt;</span> <span class="n">fv1</span><span class="p">,</span> <span class="n">fv2</span><span class="p">;</span>
+<span class="n">t_swap</span><span class="p">(</span><span class="n">fv1</span><span class="p">,</span> <span class="n">fv2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">V</span><span class="o">&gt;</span>
+<span class="n">void</span> <span class="n">t_swap</span><span class="p">(</span><span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">V</span><span class="o">&gt;&amp;</span> <span class="n">t1</span><span class="p">,</span> <span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">V</span><span class="o">&gt;&amp;</span> <span class="n">t2</span><span class="p">){</span>
+    <span class="n">t1</span><span class="o">.</span><span class="n">swap</span><span class="p">(</span><span class="n">t2</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;using vector.swap&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t_swap</span><span class="p">(</span><span class="n">iv1</span><span class="p">,</span> <span class="n">iv2</span><span class="p">);</span>
+<span class="n">t_swap</span><span class="p">(</span><span class="n">fv1</span><span class="p">,</span> <span class="n">fv2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>using vector.swap
+</pre></div>
+</div>
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>using vector.swap
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>多个template<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">template</span> <span class="o">&lt;</span><span class="n">typename</span> <span class="n">T1</span><span class="p">,</span> <span class="n">typename</span> <span class="n">T2</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">HetPair</span><span class="p">{</span>
+<span class="n">public</span><span class="p">:</span>
+    <span class="o">//</span><span class="n">HetPair</span><span class="p">(){};</span>
+    <span class="n">HetPair</span><span class="p">(</span><span class="n">T1</span> <span class="n">t1</span><span class="p">,</span> <span class="n">T2</span> <span class="n">t2</span><span class="p">)</span> <span class="p">:</span> <span class="n">t1_</span><span class="p">(</span><span class="n">t1</span><span class="p">),</span> <span class="n">t2_</span><span class="p">(</span><span class="n">t2</span><span class="p">){};</span>
+
+    <span class="n">void</span> <span class="nb">print</span><span class="p">(){</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;t1_: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">t1_</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;; t2_: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">t2_</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">};</span>
+
+<span class="n">private</span><span class="p">:</span>
+    <span class="n">T1</span> <span class="n">t1_</span><span class="p">;</span>
+    <span class="n">T2</span> <span class="n">t2_</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HetPair</span><span class="o">&lt;</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="o">&gt;</span> <span class="n">h</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="n">h</span><span class="o">.</span><span class="n">print</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>t1_: 1; t2_: 2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../readme.html" title="previous page">&lt;no title&gt;</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By 哆啦壹萌<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../_static/js/index.js"></script>
+    
+  </body>
+</html>
